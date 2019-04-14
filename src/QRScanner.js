@@ -41,7 +41,10 @@ export default class QRScanner extends PureComponent {
     finderY: 0,         // 取景器Y轴偏移量
     zoom: 0.2,          // 缩放范围 0 - 1
     translucent: false,
-    isRepeatScan: false
+    isRepeatScan: false,
+    cameraProps:{
+      captureAudio:false
+    }
   }
   
   render() {
