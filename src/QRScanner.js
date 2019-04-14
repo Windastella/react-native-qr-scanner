@@ -56,7 +56,8 @@ export default class QRScanner extends PureComponent {
           onBarCodeRead={this._handleBarCodeRead}
           barCodeTypes={[RNCamera.Constants.BarCodeType.qr]}
           flashMode={!this.props.flashMode ? RNCamera.Constants.FlashMode.off : RNCamera.Constants.FlashMode.torch} 
-          zoom={this.props.zoom}>
+          zoom={this.props.zoom}
+          {...this.props.cameraProps}>
           <View style={[styles.topButtonsContainer, this.props.topViewStyle]}>
             {this.props.renderTopView()}
           </View>
@@ -227,5 +228,6 @@ QRScanner.propTypes = {
   finderX: PropTypes.number,
   finderY: PropTypes.number,
   zoom: PropTypes.number,
-  translucent: PropTypes.bool
+  translucent: PropTypes.bool,
+  cameraProps: PropTypes.object
 }
